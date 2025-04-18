@@ -1,0 +1,99 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alpha AgriTech – Smart Farming Tools</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background: url('/Users/sr/Downloads/Tips_For_Buying_a_Farm_Header.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    
+    .card {
+      background-color: rgba(0, 0, 0, 0.75);
+      color: white;
+      border: none;
+    }
+    .btn-primary {
+      background-color: #28a745;
+      border: none;
+    }
+    h2.section-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 20px;
+      display: inline-block;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container py-5 text-center">
+    <h2 class="section-title mb-5">🌾 Alpha AgriTech – Smart Farming Tools</h2>
+    <div class="row">
+      <!-- Product 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="/Users/sr/Downloads/header_Agriculture_and_Farming.webp" class="card-img-top" alt="Drone">
+          <div class="card-body">
+            <h5 class="card-title">Agricultural Drone</h5>
+            <p class="card-text">Precision aerial monitoring for large fields.</p>
+            <span class="price">$999</span>
+            <button class="btn btn-primary add-to-cart" data-product="Agricultural Drone" data-price="999">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="/Users/sr/Downloads/moisture .png" class="card-img-top" alt="Soil Sensor">
+          <div class="card-body">
+            <h5 class="card-title">Soil Moisture Sensor</h5>
+            <p class="card-text">Real-time soil data for water management.</p>
+            <span class="price">$120</span>
+            <button class="btn btn-primary add-to-cart" data-product="Soil Moisture Sensor" data-price="120">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+      <!-- Product 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card h-100">
+          <img src="/Users/sr/Downloads/IoT-in-Agriculture.jpg" class="card-img-top" alt="IoT Irrigation">
+          <div class="card-body">
+            <h5 class="card-title">IoT Irrigation System</h5>
+            <p class="card-text">Automated water supply based on soil and weather.</p>
+            <span class="price">$450</span>
+            <button class="btn btn-primary add-to-cart" data-product="IoT Irrigation System" data-price="450">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="cart.html" class="btn btn-light mt-4">🛒 View Cart</a>
+  </div>
+  
+ <!-- Link back to Alpha Tech page -->
+ <div class="text-center">
+    <a href="alpha tech.html" class="btn btn-back">← Back to Alpha Tech</a>
+  </div>
+</div>
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    function saveCart() {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function () {
+        const product = this.getAttribute('data-product');
+        const price = this.getAttribute('data-price');
+        cart.push({ name: product, price: price });
+        saveCart();
+        alert(`${product} added to cart!`);
+      });
+    });
+  </script>
+</body>
+</html>
