@@ -43,10 +43,78 @@
       font-weight: bold;
       font-size: 1.5rem;
     }
+    .blog-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+}
 
+.blog-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.blog-img {
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-img {
+  transform: scale(1.05);
+}
+
+.blog-btn {
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.blog-btn:hover {
+  transform: translateY(-2px);
+  background-color: #007bff;
+  color: white;
+}
     .search-bar {
       width: 300px;
     }
+ /* Founder Section Styling */
+ #founder-section {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to bottom, #1a1a1a, #000);
+            border-radius: 15px;
+        }
+
+        #founder-section h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.2);
+        }
+
+        .founder-name {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00c3ff;
+            text-shadow: 0px 0px 10px rgba(0, 195, 255, 0.8);
+        }
+
+        .founder-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid #00c3ff;
+            box-shadow: 0px 0px 15px rgba(0, 195, 255, 0.8);
+        }
+
+        .founder-text {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 20px auto;
+            opacity: 0.9;
+        }
 
     .hero-card {
       max-width: 60%;
@@ -59,6 +127,13 @@
       text-align: center;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
     }
+    .card {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
 
     .hero-card h1 {
       font-size: 2.5rem;
@@ -75,13 +150,32 @@
       font-size: 1.1rem;
       padding: 10px 20px;
     }
+    #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none; /* Initially hidden */
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            transition: opacity 0.3s;
+        }
 
+        #back-to-top:hover {
+            background-color: #0056b3;
+        }
     .contact-section {
       background: rgba(0, 0, 0, 0.8);
       padding: 40px;
       border-radius: 10px;
     }
-
+    .html {
+            scroll-behavior: smooth; /* Smooth scrolling effect */
+        }
 
     .footer {
       background: linear-gradient(to right, #145a32, #ffcc00);
@@ -89,6 +183,15 @@
       padding: 20px 0;
       text-align: center;
     }
+   
+      .profile-pic {
+          width: 120px;
+          height: 120px;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 2px solid #ddd;
+      }
+
     </style>
 </head>
 <body>
@@ -130,30 +233,27 @@
       </div>
     </div>
 </nav>
-
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container">
-            <h1 class="fw-bold text-warning">🚀 Why Alpha AgriTech is a Game-Changer for You!</h1>
+        <div class="container-fluid">
+            <h1 class="fw-bold">Why Alpha AgriTech is a Game-Changer for You!</h1>
             <p class="lead">
                 Farming isn’t what it used to be—it’s faster, smarter, and more connected than ever. And if you’re still relying on old-school methods, you might be losing time, money, and resources. That’s where Alpha AgriTech comes in.
                 </p>
-                <h3>
-                  fancy display heading
-                  <small class="text-muted">
+                
                 <p>
                 We’re here to make your life easier by bringing cutting-edge technology straight to your farm. Whether you’re managing a small piece of land or running a large-scale farm, our smart solutions are designed to boost efficiency, reduce waste, and maximize yields—without making things complicated.
-                </p></small>
-</h3>
-               <h4 class="text-info"> 🔥 Here’s How We Help You Win</h4>
+                </p>
+
+               <h2 class="text-info">Here’s How We Help You Win</h2>
                 <ul>
-               <li> <b> ✅ More Crops, Less Effort – </b>Our AI-powered tools analyze soil conditions, weather patterns, and crop health so you can make better decisions without the guesswork.</li>
-                <li><b>✅ Smart Irrigation = No More Water Wastage – </b>Water only when and where your crops actually need it, thanks to our precision irrigation technology.</li>
-               <li><b> ✅ Drones That Do the Hard Work for You –</b> Monitor crops, detect diseases, and even spray fertilizers or pesticides—all without breaking a sweat.</li>
-               <li><b> ✅ Energy-Efficient Tech –</b> Save money on electricity and fuel while keeping your farm running smoothly.</li>
-               <li><b> ✅ Farming That Fits Your Lifestyle –</b> Get real-time farm updates straight to your phone, no matter where you are.</li>
+               <li>✅ More Crops, Less Effort –Our AI-powered tools analyze soil conditions, weather patterns, and crop health so you can make better decisions without the guesswork.</li>
+                <li>✅ Smart Irrigation = No More Water Wastage – Water only when and where your crops actually need it, thanks to our precision irrigation technology.</li>
+               <li> ✅ Drones That Do the Hard Work for You – Monitor crops, detect diseases, and even spray fertilizers or pesticides—all without breaking a sweat.</li>
+               <li>✅ Energy-Efficient Tech – Save money on electricity and fuel while keeping your farm running smoothly.</li>
+               <li> ✅ Farming That Fits Your Lifestyle – Get real-time farm updates straight to your phone, no matter where you are.</li>
                 </ul>
-                <h4 class="text-info"> 🌍 Why Choose Alpha AgriTech?</h4>
+                <h3 class="text-info">Why Choose Alpha AgriTech?</h3>
                 <ul>
                <li> 🚜 We Keep It Simple – No complicated setups. Just plug, play, and grow.</li>
                <li> 🌱 Eco-Friendly & Sustainable – Save water, reduce waste, and farm in a way that’s good for the planet.</li>.
@@ -162,14 +262,11 @@
                 </ul>
 
                 <h4 class="text-success">Ready to Farm Smarter?</h4>
-                
                 <p>Don’t let outdated methods hold you back. Join the smart farming revolution with Alpha AgriTech and take control of your farm like never before.
-                
-                👉 Explore our solutions today. Your farm deserves the best! 🚀</p>
         </div>
     </section>
     <main>
-        <section class="about-us">
+        <section class="about-us" align="center">
           <h1>About Us</h1>
           <p>At Agri Tech, we are dedicated to revolutionizing the agricultural sector through sustainable practices and innovative technologies. Founded in 2024 by Mary Wangechi Kimaru, a Software Engineer with a deep passion for environmental sustainability and technological advancement in farming, Agri Tech aims to empower farmers and agricultural enthusiasts to adopt eco-friendly practices that benefit both the planet and their yields.</p>
         
@@ -181,8 +278,8 @@
         </section>
         
     <!-- Solutions Section -->
-    <section id="solutions" class="container my-5">
-        <h2 class="text-center mb-4">🌾 Our Key Solutions</h2>
+    <section id="solutions" class="container-fluid my-5">
+        <h2 class="text-center mb-4">Our Key Solutions</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="card">
@@ -195,7 +292,7 @@
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img src="/Users/sr/Documents/web development/alpah agri/images/crop sensor.png" class="card-img-top" alt="Soil & Crop Sensors">
+                    <img src="/Users/sr/Documents/web development/alpah agri/images/crop sensor.png"  aalt="Responsive Image" class="img-fluid rounded">
                     <div class="card-body">
                         <h5 class="card-title">Soil & Crop Sensors</h5>
                         <p class="card-text">Real-time monitoring for better nutrient management and soil health.</p>
@@ -215,8 +312,8 @@
     </section>
 
     <!-- Video Section -->
-    <section class="container my-5">
-        <h2 class="text-center mb-4">🎥 Explore Our Technologies</h2>
+    <section class="container-fluid my-5">
+        <h2 class="text-center mb-4">Explore Our Technologies</h2>
         <div class="row">
             <div class="col-md-4 video-container">
                 <video controls>
@@ -239,51 +336,261 @@
         </div>
     </section>
 
-    <!-- Blog Section -->
-    <section class="container my-5">
-        <h2 class="text-center mb-4">📢 Latest News & Insights</h2>
+    <section id="blog" class="container my-5">
+        <h1 class="text-center mb-4">Latest from Our Blog</h1>
+      
         <div class="row">
-            <div class="col-md-6 blog-post">
-                <div class="card">
-                    <img src="/Users/sr/Documents/web development/alpah agri/images/artificial-intelligance-agriculture.webp" class="card-img-top" alt="Blog Post">
-                    <div class="card-body">
-                        <h5 class="card-title">How AI is Changing Farming</h5>
-                        <p class="card-text">Discover how artificial intelligence is reshaping agriculture.</p>
-                    </div>
-                </div>
+          <!-- Blog Post 1 -->
+          <div class="col-md-4 mb-4">
+            <div class="card blog-card h-100">
+              <img src="/Users/sr/Downloads/irrigation.jpg" class="card-img-top blog-img" alt="Smart Irrigation Techniques">
+              <div class="card-body">
+                <h5 class="card-title">5 Benefits of Smart Irrigation</h5>
+                <p class="card-text">Discover how smart irrigation systems save water, reduce cost, and improve crop yield using real-time soil sensors.</p>
+                <a href="https://eng.ruralvoice.in/agritech/tractor-sales-increased-marginally-by-three-percent-in-october.html" class="btn btn-outline-primary blog-btn">Read More</a>
+              </div>
             </div>
-            <div class="col-md-6 blog-post">
-                <div class="card">
-                    <img src="/Users/sr/Documents/web development/alpah agri/images/future tech .jpeg" class="card-img-top" alt="Blog Post">
-                    <div class="card-body">
-                        <h5 class="card-title">The Future of AgriTech</h5>
-                        <p class="card-text">Exploring the latest advancements in smart farming.</p>
-                    </div>
+          </div>
+      
+          <!-- Blog Post 2 -->
+          <div class="col-md-4 mb-4">
+            <div class="card blog-card h-100">
+              <img src="/Users/sr/Downloads/header_Agriculture_and_Farming.webp" class="card-img-top blog-img" alt="Drone in farmland">
+              <div class="card-body">
+                <h5 class="card-title">Drones in Agriculture</h5>
+                <p class="card-text">Explore how drones are revolutionizing crop monitoring, spraying, and mapping with high-precision AI systems.</p>
+                <a href="https://www.deccanchronicle.com/southern-states/andhra-pradesh/kharif-ap-to-field-875-drones-for-farming-by-june-1873085" class="btn btn-outline-primary blog-btn">Read More</a>
+              </div>
+            </div>
+          </div>
+      
+          <!-- Blog Post 3 -->
+          <div class="col-md-4 mb-4">
+            <div class="card blog-card h-100">
+              <img src="/Users/sr/Downloads/IoT-in-Agriculture.jpg" class="card-img-top blog-img" alt="IoT devices in agriculture">
+              <div class="card-body">
+                <h5 class="card-title">IoT in Smart Farming</h5>
+                <p class="card-text">A beginner’s guide to Internet of Things in agriculture — from weather sensors to automated machinery.</p>
+                <a href="https://techgenyz.com/iot-in-agriculture-precision-farming-sustainability/" class="btn btn-outline-primary blog-btn">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    <!-- Contact Form -->
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+          <div class="col-md-6 profile-container">
+              <div class="card p-4 shadow-lg">
+                  <h4 class="text-center">Profile Information</h4>
+                  <div class="text-center">
+                      <img id="profileImage" src="/Users/sr/Documents/web development/alpah agri/images/user.png"    alt="Profile Picture" class="profile-pic">
+                  </div>
+                  <div class="mt-3 text-center">
+                      <input type="file" class="form-control" id="profileInput" accept="image/*" onchange="previewImage(event)" required>
+                  </div>
+                  <form class="mt-3 needs-validation" novalidate>
+                      <div class="mb-3 input-group">
+                          <span class="input-group-text"><img src="/Users/sr/Documents/web development/alpah agri/images/user.png" height="20" width="20" alt="User Icon"><i class="fas fa-user"></i></span>
+                          <input type="text" class="form-control" placeholder="Full Name" required>
+                          <div class="invalid-feedback">Please enter your full name.</div>
+                      </div>
+                      <div class="mb-3 input-group">
+                          <span class="input-group-text"><img src="/Users/sr/Documents/web development/alpah agri/images/email.png" height="20" width="20" alt="Email Icon"><i class="fas fa-envelope"></i></span>
+                          <input type="email" class="form-control" placeholder="Email Address" required>
+                          <div class="invalid-feedback">Please enter a valid email.</div>
+                      </div>
+                      <div class="mb-3 input-group">
+                          <span class="input-group-text"><img src="/Users/sr/Documents/web development/alpah agri/images/call.png" height="20" width="20" alt="Phone Icon"><i class="fas fa-phone"></i></span>
+                          <input type="tel" class="form-control" placeholder="Phone Number" required>
+                          <div class="invalid-feedback">Please enter your phone number.</div>
+                      </div>
+                      <div class="mb-3 input-group">
+                          <span class="input-group-text"><img src="/Users/sr/Documents/web development/alpah agri/images/locked-computer.png" height="20" width="20" alt="Password Icon"><i class="fas fa-lock"></i></span>
+                          <input type="password" class="form-control" placeholder="Password" required>
+                          <div class="invalid-feedback">Please enter a password.</div>
+                      </div>
+                      <div class="mb-3 input-group">
+                          <span class="input-group-text"><img src="/Users/sr/Documents/web development/alpah agri/images/profile.png" height="20" width="20" alt="profile icon"><i class="fas fa-info-circle"></i></span>
+                          <textarea class="form-control" rows="3" placeholder="Bio (Tell us about yourself)" required></textarea>
+                          <div class="invalid-feedback">Please enter a short bio.</div>
+                      </div>
+                      <div class="d-grid">
+                          <button type="submit" class="btn btn-custom"><i class="fas fa-save"></i> Save Profile</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <script>
+      // Live preview of profile picture
+      function previewImage(event) {
+          const input = event.target;
+          const image = document.getElementById('profileImage');
+          if (input.files && input.files[0]) {
+              const reader = new FileReader();
+              reader.onload = function(e) {
+                  image.src = e.target.result;
+              };
+              reader.readAsDataURL(input.files[0]);
+          }
+      }
+
+      // Bootstrap form validation
+      (function () {
+          'use strict';
+          const forms = document.querySelectorAll('.needs-validation');
+          Array.prototype.slice.call(forms).forEach(function (form) {
+              form.addEventListener('submit', function (event) {
+                  if (!form.checkValidity()) {
+                      event.preventDefault();
+                      event.stopPropagation();
+                  }
+                  form.classList.add('was-validated');
+              }, false);
+          });
+      })();
+  </script>
+  <!-- FAQ Section -->
+  <div class="mt-4">
+    <h3>Frequently Asked Questions</h3>
+    <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    What is alpha agri tech?
+                </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Alpha AgriTech is your agriculture company focused on smart farming appliances. The company specializes in advanced agricultural technologies that help farmers improve efficiency and sustainability.
+<br>
+                   Alpha AgriTech includes:
+                 <br> ✅ Smart Irrigation systems
+                 <br> ✅ Soil & Crop Sensors for real-time data
+                 <br>✅ Drones for Agriculture (monitoring & spraying)
+                 <br> ✅ Farm Automation solutions
+                 <br> ✅ Energy-Efficient Devices
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Contact Form -->
-    <section class="container my-5">
-        <h2 class="text-center mb-4">📞 Contact Us</h2>
-        <form>
-            <div class="mb-3">
-                <label for="name" class="form-label">Name</label>
-                <input type="text" class="form-control" id="name" required>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    How does Alpha agri tech help community?
+                </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                  Alpha AgriTech helps the community by revolutionizing agriculture with smart farming solutions that enhance productivity, sustainability, and cost-efficiency. Here’s how it makes an impact:
+                  <br>
+                  🌱 Empowering Farmers with Technology
+                  <br>
+                  <br> ✅ Smart Irrigation Systems – Reduces water wastage by optimizing irrigation based on real-time weather and soil conditions.
+                  <br>✅ Soil & Crop Sensors – Provides farmers with accurate data on soil health, moisture levels, and nutrient needs, leading to better crop yields.
+                  <br> ✅ Drone Technology – Helps with crop monitoring, spraying, and disease detection, reducing labor costs and improving efficiency.
+                  <br> ✅ Farm Automation – Uses AI-powered automation for tasks like seeding, fertilizing, and harvesting, reducing manual effort.
+                  <br> ✅ Energy-Efficient Devices – Promotes eco-friendly solutions, such as solar-powered equipment, to reduce reliance on fossil fuels.
+                </div>
             </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="message" class="form-label">Message</label>
-                <textarea class="form-control" id="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-        </form>
-    </section>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<body class="container mt-5">
 
+  <!-- Navigation Link -->
+  <nav class="text-center mb-4">
+      <a href="#founder-section" class="btn btn-primary">Meet the Founder</a>
+  </nav>
+
+  <section id="founder-section">
+    <h2>🌱 Meet the Founder</h2>
+    <div class="row mt-4">
+        <div class="col-md-4 offset-md-4">
+            <img src="/Users/sr/Documents/web development/alpah agri/images/IMG_9843.jpeg" alt="Founder Image" class="founder-img">
+        </div>
+    </div>
+    <h3 class="founder-name mt-3">Daniel Odametey</h3>
+    <p class="text-white">Founder & Visionary of Alpha AgriTech</p>
+    
+    <p class="founder-text">
+        Innovating Agriculture with Smart Technology
+        With a deep passion for agriculture and cutting-edge technology, Daniel Odametey founded Alpha AgriTech to revolutionize the farming industry.  
+    </p>
+
+    <h4 class="mt-4">The Journey & Inspiration</h4>
+    <p class="founder-text">
+        Growing up in a farming community,Daniel Odametey witnessed firsthand the struggles of traditional farming.  
+        The unpredictable weather, inefficient resource use, and labor-intensive processes inspired a lifelong mission to create smarter, sustainable farming solutions.  
+    </p>
+
+    <h4 class="mt-4">Key Achievements & Milestones</h4>
+    <p class="founder-text">
+        Over the years,Daniel Odametey has made significant strides in AgriTech innovation:  
+        -  Educational Background:Degree in Agricultural Technology & AI Development & Computer Applications 
+        - Awards & Recognition: Recipient of the Innovation in AgriTech Award 
+        - Global Impact: Helped thousands of farmers optimize resources & increase yields  
+        - Developed AI-Powered Farming Tools that use IoT and real-time data analysis  
+        - Patent Holder: for a breakthrough Smart Irrigation System  
+    </p>
+
+    <h4 class="mt-4">Overcoming Challenges</h4>
+    <p class="founder-text">
+        The journey wasn’t easy. Daniel Odametey faced multiple obstacles, from funding shortages to skepticism about AI-driven farming.  
+        However, persistence and a strong belief in innovation helped turn ideas into reality.  
+        Today, Alpha AgriTech stands as a pioneer in smart farming solutions, making agriculture more efficient and sustainable.  
+    </p>
+
+    <h4 class="mt-4">🚜 Vision for the Future</h4>
+    <p class="founder-text">
+        Alpha AgriTech aims to expand globally bringing smart farming solutions to every corner of the world.  
+        Future projects include:  
+        -  AI-powered crop monitoring for real-time plant health analysis  
+        -  Sustainable farming initiatives to reduce water and energy waste  
+        -  Community-driven farmer education & support programs  
+    </p>
+
+    <h4 class="mt-4">📩 Let’s Connect!</h4>
+    <p class="founder-text">
+        Want to collaborate or learn more about Alpha AgriTech? Reach out today!  
+        <br>📧 Email: Kojoalpha68@gmail.com 
+    </p>
+</section>
+  <!-- Contact Section -->
+  <section id="contact" class="mt-5 text-center">
+      <h3 class="fw-bold">📩 Let’s Connect!</h3>
+      <p class=" text-white">Want to collaborate or learn more about Alpha AgriTech? Reach out today!</p>
+      <a href="#founder-section" class="btn btn-primary">Back to Founder</a>
+      <a href="https://www.linkedin.com/in/daniel-odametey-b18bb919b/ " class="btn btn-secondary">🌐 LinkedIn</a>
+      <a href="tel:+8141190936" class="btn btn-success">📞 Call Us</a>
+  </section>
+
+ <!-- Back to Top Button -->
+ <button id="back-to-top" onclick="scrollToTop()">⬆ Top</button>
+
+ <script>
+     // Show the Back to Top button when scrolling down
+     window.onscroll = function() {
+         let button = document.getElementById("back-to-top");
+         if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+             button.style.display = "block";
+         } else {
+             button.style.display = "none";
+         }
+     };
+
+     // Function to scroll to the top
+     function scrollToTop() {
+         window.scrollTo({top: 0, behavior: "smooth"});
+     }
+ </script>
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <div class="container text-center my-4">
         <nav>
           <ul class="pagination justify-content-center">
@@ -301,6 +608,7 @@
         </nav>
     
     </div>
+    
       <!-- Footer -->
       <div class="footer text-center">
         <p>&copy; 2025 Alpha AgriTech. All rights reserved.</p>
